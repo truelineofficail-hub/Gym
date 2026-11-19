@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0b0a">
+<meta name="description" content="30-minute daily gym plan. Works offline.">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="GYM">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>GYM · 90 Day Build</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="pre"><div id="pn">0</div><div class="pl"><i id="pf"></i></div><p>GYM · 90 DAY BUILD</p></div>
+
+<div id="app">
+<section class="view on" id="v-today">
+<div class="bar rv"><span class="logo"><i></i>GYM</span><span id="dateLbl"></span></div>
+<h1 class="hello disp rv" style="--d:.08s">Let’s<br><span>go.</span></h1>
+<div class="dayno rv" style="--d:.16s">Day <b id="dayNum">1</b></div>
+<div class="marq rv" style="--d:.2s"><div id="mq"></div></div>
+<div class="tcard rv" style="--d:.28s">
+<div class="tk" id="tk"></div>
+<div class="tname disp" id="tname"></div>
+<div class="tchips" id="tchips"></div>
+<button class="go-btn" id="startBtn" type="button"></button>
+</div>
+<div class="xpb rv" style="--d:.32s"><div class="xr"><b id="xLv">Rookie</b><span id="xTx">0 / 200 XP</span></div><div class="xt"><i id="xFill"></i></div><div class="xn" id="xNx"></div></div>
+<div class="stats rv" style="--d:.36s">
+<div class="st"><b id="sCount">0</b><span>Sessions</span></div>
+<div class="st"><b id="sWeek">0/7</b><span>This week</span></div>
+<div class="st"><b class="sm" id="sLvl">Rookie</b><span>Level</span></div>
+</div>
+<div class="nx rv" style="--d:.44s"><div class="sub">UP NEXT · <span id="nxDay"></span></div><div class="nxn disp" id="nxName"></div><div id="nxList"></div><button class="go-btn lock" type="button" disabled>🔒 Unlocks tomorrow</button></div>
+</section>
+
+<section class="view" id="v-plan">
+<div class="bar rv"><span class="logo"><i></i>PLAN</span><span id="phLbl"></span></div>
+<h2 class="disp rv" style="--d:.05s">This<br>week</h2>
+<div class="week rv" id="week" style="--d:.1s"></div>
+<h2 class="disp rv" style="--d:.15s">Workouts</h2>
+<div class="rv" id="plans" style="--d:.2s"></div>
+<h2 class="disp rv" style="--d:.25s">90 days</h2>
+<div class="cal rv" id="cal" style="--d:.3s"></div>
+<div class="legend rv" style="--d:.3s"><span>■ DONE</span><span>▢ TODAY</span></div>
+</section>
+
+<section class="view" id="v-fuel">
+<div class="bar rv"><span class="logo"><i></i>FUEL</span><span id="fLbl"></span></div>
+<div class="big disp rv" style="--d:.05s">68<span>g</span></div>
+<div class="sub rv" style="--d:.1s">Protein today</div>
+<div class="fbar rv" style="--d:.12s"><i id="fb"></i></div>
+<div class="sub rv" style="--d:.14s" id="fTxt"></div>
+<div class="rv" id="meals" style="--d:.2s;margin-top:18px"></div>
+</section>
+</div>
+
+<nav class="tabs"><button class="on" data-v="today">TODAY</button><button data-v="plan">PLAN</button><button data-v="fuel">FUEL</button></nav>
+
+<div id="player">
+<div class="ptop"><span id="pStep">1 / 6</span><button class="x" id="pClose" aria-label="Close">✕</button></div>
+<div class="pb"><i id="pBar"></i></div>
+<div class="pmid"><svg class="fig pf" id="pFig" viewBox="0 0 200 120"></svg><div class="sub" id="pSet"></div><div class="disp" id="pName"></div><div id="pTarget"></div><div class="dots" id="pDots"></div><p id="pHint"></p></div>
+<button class="pbtn" id="pBtn" type="button">Set done</button>
+<div class="layer" id="rest"><div class="sub">REST</div><div class="rring"><svg viewBox="0 0 240 240"><circle class="a" cx="120" cy="120" r="110"/><circle class="b" id="rArc" cx="120" cy="120" r="110"/></svg><div id="rNum">60</div></div><div class="sub" id="rNext"></div><button class="skip" id="skip" type="button">SKIP</button></div>
+<div class="layer" id="fin"><div class="burst" style="position:absolute"></div><div class="done-t disp">Done.</div><div class="sub">+20 XP · 30 minutes crushed</div><button class="pbtn" id="finBtn" type="button" style="margin-top:20px">Back home</button></div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
